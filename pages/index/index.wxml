@@ -1,0 +1,32 @@
+<view class="header">
+
+    <view class="top">
+        <view class="above-game">
+       <!--  <view class="game-intro">Join the numbers and get to the 2048 tile!</view> -->
+       <view class="new-game ngleft" bindtap="newGame">后退一步</view>
+        <view class="new-game ngright" bindtap="newGame">New Game</view>
+    </view>
+     <!--    <view class="title">2048</view> -->
+        <view class="score">
+         <view class="scores-container scleft">
+                <view class="score-desc">- 当前得分 -</view>
+                <view class="score-num">{{score}}</view>
+            </view>
+            <view class="scores-container scright">
+                <view class="score-desc">- 历史最高 -</view>
+                <view class="score-num">{{maxscore}}</view>
+            </view>          
+        </view>
+    </view>
+
+</view>
+<view class="container" bindtouchstart="onTouchStart" bindtouchmove="onTouchMove" bindtouchend="onTouchEnd">
+    <view class="cell-container" wx:for="{{board}}" wx:for-item="row" wx:key="boardId">
+        <view class="cell cell-{{item}}" wx:for="{{row}}" wx:key="rowId">	<text class='num'>{{item}}</text></view>
+    </view>
+    <view class="game-over" style="display:{{isShow}}">
+        <view class="game-over-desc">本次得分</view>
+        <text class="end-score">{{score}}</text>
+        <view class="restart-game" bindtap="newGame">Restart</view>
+    </view>
+</view>

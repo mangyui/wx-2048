@@ -1,0 +1,285 @@
+page{
+  background-color: #472c82;
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+    width: 100%;
+    margin-bottom: 40rpx;
+}
+
+
+.top {
+    width: 670rpx;
+    margin: 60rpx auto 20rpx;
+}
+.top .title {
+    font-size: 80rpx;
+    font-weight: bold;
+    margin-top: 20rpx;
+}
+
+.top .score {
+    width: 100%;
+}
+
+.top .score:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.top .scores-container {
+    width: 280rpx;
+    padding: 10rpx 20rpx;
+    background: #362467;
+    color: white;
+    text-align: center;
+    border-radius: 15rpx;
+
+}
+.top .score .scleft{
+  float: left;
+}
+.top .score .scright{
+  float: right;
+} 
+.top .score-desc {
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #655396;
+    font-size: 12px;
+    line-height: 50rpx;
+}
+.top .score-num{
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 80rpx;
+}
+
+.top .above-game
+{
+  margin: 20px auto;
+}
+.above-game .game-intro {
+    font-size: 15px;
+    width: 400rpx;
+}
+
+.above-game .new-game {
+    display: block;
+    width: 320rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
+	  color: #f9f6f2;
+    border-radius: 15rpx;
+      font-weight: bold;
+  text-shadow: 0 1px 2px #000;
+}
+.above-game:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.ngleft
+{
+  float: left;
+    background: #6fdc8c;
+  border-bottom: 3px solid #3caf5b;
+}
+.ngright{
+  float: right;
+    background: #58ccfb;
+  border-bottom: 3px solid #349bc4;
+}
+.container {
+    width: 670rpx;
+    height: 670rpx;
+    margin: 0 auto;
+    background: #362467;
+    border-radius: 10rpx;
+    overflow: hidden;
+    position: relative;
+}
+
+.cell-container {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 22rpx;
+}
+
+.cell {
+    width: 140rpx;
+    height: 132rpx;
+    margin-left: 22rpx;
+    text-align: center;
+    line-height: 132rpx;
+    border-radius: 10rpx;
+    font-weight: bold;
+    font-size: 70rpx;
+}
+
+.game-over {
+    position: absolute;
+    width: 670rpx;
+    height: 670rpx;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+.game-over .game-over-desc {
+  font-size: 50rpx;
+  color: #c4b7e7;
+    margin: 160rpx auto 30rpx;
+}
+
+ .game-over .end-score {
+    font-size: 70rpx;
+} 
+
+.game-over .restart-game {
+    margin: 50rpx auto;
+    display: block;
+    width: 320rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
+	  color: #f9f6f2;
+    border-radius: 15rpx;
+    font-size: 50rpx;
+    font-weight: bold;
+    text-shadow: 0 1px 2px #000;
+    background: #58ccfb;
+    border-bottom: 3px solid #349bc4;
+}
+.cell-container .cell:not(.cell-0) .num
+{
+  text-shadow: 0 0 2px rgb(99, 99, 99);
+  color: #fff;
+  display: inline-block;
+   transition: all 0.5s ease-in-out; 
+  -webkit-transform: rotate(10deg);
+  -moz-transform:  rotate(10deg);
+  -ms-transform:  rotate(10deg);
+  transform:  rotate(10deg);
+}
+.cell-0 {
+    height: 140rpx;
+    color: #453475;
+    background-color: #453475;
+}
+
+.cell-2 {
+  transition: translate 0.5s ease-in-out;
+ /* transform: translate(60px,60px); */
+  border-bottom:8rpx solid  #52c381;
+  background: #52c381;
+  box-shadow: 0 2px 40px 2px #52c381, inset 0 0 20px 5px rgba(255, 255, 255,0.8);
+}
+
+.cell-4 {
+    transition: translate 0.5s ease-in-out;
+     border-bottom:8rpx solid  #52bfb5;
+  background: #52bfb5;
+  box-shadow: 0 2px 40px 2px #52bfb5, inset 0 0 20px 5px rgba(255, 255, 255,0.8);
+}
+
+.cell-8 {
+    transition: translate 0.5s ease-in-out;
+  border-bottom:8rpx solid  #44c5fa;
+  color: #f9f6f2;
+  background: #44c5fa;
+    box-shadow: 0 2px 40px 2px #44c5fa, inset 0 0 20px 5px rgba(255, 255, 255,0.8);
+}
+
+.cell-16 {
+    transition: translate 0.5s ease-in-out;
+  border-bottom:8rpx solid  #4b3fb0;
+  color: #f9f6f2;
+  background: #4b3fb0;
+    box-shadow: 0 2px 40px 2px #4b3fb0, inset 0 0 20px 5px rgba(255, 255, 255,0.8);
+}
+
+.cell-32 {
+    transition: translate 0.5s ease-in-out;
+  border-bottom:8rpx solid  #ce3c50;
+  color: #f9f6f2;
+  background: #ce3c50;
+    box-shadow: 0 2px 40px 2px #ce3c50, inset 0 0 20px 5px rgba(255, 255, 255,0.8);
+}
+
+.cell-64 {
+    transition: translate 0.5s ease-in-out;
+  border-bottom:8rpx solid  #d1397d;
+  color: #f9f6f2;
+  background: #d1397d;
+    box-shadow: 0 2px 40px 2px #d1397d, inset 0 0 20px 5px rgba(255, 255, 255,0.8);
+}
+
+.cell-128 {
+    transition: translate 0.5s ease-in-out;
+  border-bottom:8rpx solid  #de5347;
+  color: #f9f6f2;
+  background: #de5347;
+   box-shadow: 0 2px 40px 2px #de5347, inset 0 0 20px 5px rgba(255, 255, 255,0.8);
+  font-size: 60rpx;
+}
+
+.cell-256 {
+    transition: translate 0.5s ease-in-out;
+  color: #f9f6f2;
+  border-bottom:8rpx solid  #691f39;
+  background: #532233;
+  box-shadow: 0 2px 40px 2px #691f39, inset 0 0 20px 5px rgba(255, 255, 255,0.5);
+  font-size: 60rpx;
+}
+
+.cell-512 {
+    transition: translate 0.5s ease-in-out;
+  color: #f9f6f2;
+  border-bottom:8rpx solid  #3a488d;
+  background: #2c3979;
+  box-shadow: 0 2px 40px 2px #3248b9, inset 0 0 20px 5px rgba(255, 255, 255,0.6);
+  font-size: 60rpx;
+}
+
+.cell-1024 {
+    transition: translate 0.5s ease-in-out;
+  color: #f9f6f2;
+  border-bottom:8rpx solid  #1b273b;
+  background: #202d40;
+  box-shadow: 0 2px 30px 10px #202d40, inset 0 0 20px 5px rgba(255, 255, 255,0.4);
+  font-size: 50rpx;
+}
+
+.cell-2048 {
+    transition: translate 0.5s ease-in-out;
+  border-bottom:8rpx solid  #000;
+  color: #f9f6f2;
+  background: #000;
+  box-shadow: 0 2px 40px 2px #000, inset 0 0 20px 5px rgba(255, 255, 255,0.4);
+  font-size: 50rpx;
+}
+
+.cell-4096 {
+    transition:translate 0.5s ease-in-out;
+  border-bottom:8rpx solid  #a6c;
+  color: #f9f6f2;
+  background: #a6c;
+  box-shadow: 0 2px 40px 2px #a6c, inset 0 0 20px 5px rgba(255, 255, 255,0.4);
+  font-size: 50rpx;
+}
+
+.cell-8192 {
+  transition: translate 0.5s ease-in-out;
+  border-bottom:8rpx solid  #000;
+  color: #f9f6f2;
+  background: #000;
+  box-shadow: 0 2px 40px 2px #000, inset 0 0 20px 5px rgba(255, 255, 255,0.4);
+  font-size: 50rpx;
+}
