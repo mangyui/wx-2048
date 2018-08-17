@@ -86,13 +86,19 @@ page{
 .ngleft
 {
   float: left;
-    background: #6fdc8c;
+  background: #6fdc8c;
   border-bottom: 3px solid #3caf5b;
 }
 .ngright{
   float: right;
-    background: #58ccfb;
+  background: #58ccfb;
   border-bottom: 3px solid #349bc4;
+}
+.btnclick1{
+  background: #3caf5b;
+}
+.btnclick2{
+  background: #349bc4;
 }
 .container {
     width: 670rpx;

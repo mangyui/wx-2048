@@ -6,7 +6,10 @@ Page({
         hasConflicted: [],
         start: [],
         end: [],
-        isShow: 'none'
+        isShow: 'none',
+        isback:false,
+        backarr:[],
+        backscore:0
     },
 
     onLoad () {
@@ -27,6 +30,15 @@ Page({
         this.generateOneNumber();
     },
 
+    //后退一步
+    backGame(){
+      if(!this.data.isback)
+          return;
+      this.setData({
+          board:this.data.backarr,
+          score:this.data.backscore
+        })
+    },
     //初始化
     init () {
         for (let i=0; i<4; i++) {
@@ -96,6 +108,9 @@ Page({
         if (Math.abs(moveX) < 5 && Math.abs(moveY) < 5) return;
         let direction = this.getDirection(moveX, moveY);
         if (this.moveAll(direction)) {
+             
+            this.setData({isback:true});
+
             if (this.data.score > this.data.maxscore) {
                 this.setData({maxscore: this.data.score});
                 wx.setStorageSync('maxscore', this.data.score);
@@ -136,6 +151,9 @@ Page({
 
     moveLeft () {
         let arr = this.data.board;
+
+        this.setData({ backarr: arr,backscore:this.data.score });  //后退一步1.保存上一步信息
+
         let hasConflicted = this.data.hasConflicted;
         let change = false;
         for (let i=0; i<4; i++) {
@@ -163,6 +181,9 @@ Page({
 
     moveRight () {
         let arr = this.data.board;
+
+        this.setData({ backarr: arr, backscore: this.data.score });  //后退一步1.保存上一步信息
+
         let hasConflicted = this.data.hasConflicted;
         let change = false;
         for (let i=0; i<4; i++) {
@@ -189,6 +210,9 @@ Page({
 
     moveUp () {
         let arr = this.data.board;
+
+        this.setData({ backarr: arr, backscore: this.data.score });  //后退一步1.保存上一步信息
+
         let hasConflicted = this.data.hasConflicted;
         let change = false;
         for (let j=0; j<4; j++) {
@@ -215,6 +239,9 @@ Page({
 
     moveDown () {
         let arr = this.data.board;
+
+        this.setData({ backarr: arr, backscore: this.data.score });  //后退一步1.保存上一步信息
+
         let hasConflicted = this.data.hasConflicted;
         let change = false;
         for (let j=0; j<4; j++) {
@@ -261,6 +288,6 @@ Page({
                 if (j<3 && arr[i][j] === arr[i][j+1]) return;
             }
         }
-        this.setData({isShow: 'block'});
+        this.setData({isShow: 'block',isback:false});
     }
 });

@@ -3,8 +3,8 @@
     <view class="top">
         <view class="above-game">
        <!--  <view class="game-intro">Join the numbers and get to the 2048 tile!</view> -->
-       <view class="new-game ngleft" bindtap="newGame">后退一步</view>
-        <view class="new-game ngright" bindtap="newGame">New Game</view>
+       <view class="new-game ngleft" bindtap="backGame" hover-class="btnclick1">后退一步</view>
+        <view class="new-game ngright" bindtap="newGame" hover-class="btnclick2">New Game</view>
     </view>
      <!--    <view class="title">2048</view> -->
         <view class="score">
